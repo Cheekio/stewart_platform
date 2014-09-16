@@ -3,8 +3,8 @@ length = 68.6;
 thickness = 3;
 peg_length = 3*thickness;
 height = 3;
-w_offset = 17;
-l_offset = 18;
+w_offset = 19;
+l_offset = 16;
 
 translate([0, w_offset, 0]){
 	cube([length+2*thickness, thickness, thickness]);
