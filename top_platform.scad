@@ -5,8 +5,8 @@ slop = 5;
 offset = 0.1;
 thickness = 3;
 
-sheath_height = 7;
-male_height = sheath_height + 3;
+sheath_height = 15;
+male_height = sheath_height + 7;
 male_radius = 2.8;
 sheath_radius = male_radius + thickness;
 
