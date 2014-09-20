@@ -1,3 +1,5 @@
+include <servo_holder.scad>;
+
 a_width = 53.4;
 a_length = 68.6;
 s_depth = 15.8;
@@ -16,12 +18,10 @@ off = 0.1;
 male_height = thickness + 2*offset;
 male_radius = 2.8;
 
-
 servo_distance = 0.5*a_length + slop + s_depth;
 p_radius = servo_distance + slop + wall;
 h_radius = 0.5*a_width;
 male_distance = p_radius - 0.5*(p_radius - h_radius);
-
 
 module male() {
 	translate([male_distance, 0,-offset]){
@@ -29,22 +29,6 @@ module male() {
 	}
 }
 
-
-
-module servo_holder() {
-	difference(){
-		cube([sc_l,sc_w,depth]);
-		translate([wall, wall, -off]){
-			cube([s_l, s_w, depth + 2*off]);
-		}
-		translate([0.5*wall, wall+0.5*s_w, -off]){
-			cylinder(r=1, h=depth+2*off);
-		}
-		translate([1.5*wall+s_l, wall+0.5*s_w, -off]){
-			cylinder(r=1, h=depth+2*off);
-		}
-	}
-}
 module two_servos() {
 	translate([servo_distance,0,0]){
 		mirror([0,1,0]){

@@ -20,6 +20,16 @@ module servo_holder() {
 			cylinder(r=1, h=depth+2*off);
 		}
 	}
+	translate([0,sc_w-wall,depth]){
+			difference(){
+			cube([sc_l,wall, sc_w]);
+			translate([0,-off,0]){
+				rotate(-30, [0,1,0]){
+					cube([sc_l*2,wall+2*off,sc_l]);
+				}
+			}
+		}
+	}
 }
 
 servo_holder();
