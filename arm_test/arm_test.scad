@@ -13,7 +13,7 @@ give = 0.5;
 
 component_width = head_diameter + 2*give + 2*wall_width;
 component_height = arm_height + 2*give + 2*wall_width;
-component_length = 35;
+component_length = 70;
 
 rotate(-90, [0,1,0]){
 difference(){
@@ -28,9 +28,9 @@ difference(){
 	translate([head_radius, 0.5*component_width, arm_height+2*give]){
 		cylinder(r=head_radius+give, h=component_height, $fs=0.5);
 	}
-	translate([component_length-(10),-offset,-offset]){
+	translate([component_length-(17),-offset,-offset]){
 		cube([component_length, component_width+2*offset, component_height-arm_height]);
-		translate([5,0.5*component_width+offset,0]){
+		translate([12,0.5*component_width+offset,0]){
 			cylinder(r=wire_radius+give, h=component_height+2*offset, $fs=0.5);
 		}
 	}
