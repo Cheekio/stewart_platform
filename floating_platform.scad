@@ -46,15 +46,30 @@ module negative_circle() {
 	}
 }
 
+module small_negative_circle() {
+	rotate(90, [0,0,1]){
+		translate([0.85*radius, 0,-offset]){
+			cylinder(r=0.2*radius, h=thickness+2*offset);
+		}
+	}
+}
+
 difference(){
 	cylinder(r=1.3*radius, h=thickness, $fs=0.5);
 	negative_circle();
+	small_negative_circle();
 	rotate(120, [0,0,1]){
 		negative_circle();
+		small_negative_circle();
 	}
 	rotate(240, [0,0,1]){
 		negative_circle();
+		small_negative_circle();
 	}
+	translate([0,0,-offset]){
+		cylinder(r=0.4*radius, h=thickness+2*offset);
+	}
+
 }
 attachment_pair();
 rotate(120, [0,0,1]){
