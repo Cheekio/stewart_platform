@@ -29,6 +29,7 @@ difference(){
 		cylinder(r=head_radius+give, h=component_height, $fs=0.5);
 	}
 	translate([component_length-(17),-offset,-offset]){
+		cube([component_length, component_width+2*offset, component_height-arm_height]);
 		translate([12,0.5*component_width+offset,0]){
 			cylinder(r=wire_radius+give, h=component_height+2*offset, $fs=0.5);
 		}
